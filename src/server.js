@@ -4,13 +4,14 @@ const app = express()
 const axios = require("axios")
 require("dotenv").config
 
-const API_KEY = process.env.API_KEY
+// const API_KEY = process.env.API_KEY
+const API_KEY = "b7eaea3eb00f546b229268e21f35982e"
 
 
 app.use(cors())
 
 const host = "api.themoviedb.org/3/movie"
-const typeReq = "popular"
+const typeReq = "top_rated"
 
 app.get("/", async (req, res) =>{
 
@@ -25,7 +26,7 @@ app.get("/", async (req, res) =>{
     // return data.results
 })
  
-let id = 19404
+
 
 app.get("/filme/:id", async (req, res) =>{
     try {

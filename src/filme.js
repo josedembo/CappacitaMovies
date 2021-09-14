@@ -1,6 +1,4 @@
-// const axios = require("axios")
-// axios
-const  url_image = "https://image.tmdb.org/t/p/w300"
+const  url_image = "https://image.tmdb.org/t/p/w500"
 
 async function getMovies(){
     
@@ -28,8 +26,8 @@ async function getMovei(id){
         const data = await response.json()
 
 
-        // console.log(movieDadta(data))
-        // console.log(data)
+        console.log(movieDadta(data))
+       
    
     
         
@@ -93,6 +91,5 @@ function listMovies(data){
     }
 
 }
-getMovies()
+// getMovies()
 getMovei(566525)
-
