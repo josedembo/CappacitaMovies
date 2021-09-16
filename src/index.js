@@ -78,7 +78,7 @@ function listMovies(data){
 
         let year = filme.release_date.slice(0, 4)
     
-        listarFilmes += `<div class="col-md-3" id="${filme.id}"><figure><a href="" target="_blanck"><img src="${url_image}${filme.poster_path}" class ="img-fluid img-thumbnail" alt="" title="${filme.title}"></a>  <figcaption class="name text-center ">${filme.title}</br>${year}</figcaption> </figure></div>`
+        listarFilmes += `<div class="col-md-3" id="${filme.id}"><figure><a href="http://localhost:1234/filme/${filme.id}" target="_blanck"><img src="${url_image}${filme.poster_path}" class ="img-fluid img-thumbnail" alt="" title="${filme.title}"></a>  <figcaption class="name text-center ">${filme.title}</br>${year}</figcaption> </figure></div>`
         
         console.log(listarFilmes)
 
