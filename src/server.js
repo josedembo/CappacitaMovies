@@ -3,6 +3,7 @@ const cors = require("cors")
 const app = express()
 const axios = require("axios")
 const bodyParser = require('body-parser')
+const database = require("../db/databaseMysqlKnex")
 require("dotenv").config
 
 // const API_KEY = process.env.API_KEY
@@ -15,8 +16,9 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const host = "api.themoviedb.org/3/movie"
-const typeReq = "top_rated"
+const typeReq = "upcoming"
 
+// busca filme na API do TMDB
 app.get("/", async (req, res) =>{
 
     try {
@@ -32,7 +34,7 @@ app.get("/", async (req, res) =>{
 })
  
 
-
+// busca um filme  pelo id na API do TMDB
 app.get("/filme/:id", async (req, res) =>{
     try {
         const {data} = await axios(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${API_KEY}&language=pt-BR
@@ -47,9 +49,42 @@ app.get("/filme/:id", async (req, res) =>{
 })
 
 
-app.post("/comentario", (req, res) =>{
-    res.send("Comentario recebido:" +req.body.name )
+// recebe os comentarios digitaos pelo usuario e cadastra no banco de dados
+app.post("/comentario", async(req, res) =>{
+    const dataForm = {
+        fl_id:req.body.movieId,
+        user_name: req.body.name,
+        fl_name:req.body.filme,
+        fl_coment:req.body.comentario
+    }
+    res.send( await database.cadastrarFilmes(dataForm))
+    
 })
+
+// busca e mostra todos os comentários do banco de dados
+app.get("/comentarios", async (req, res) => {
+    res.send(await database.mostarFilmes())
+})
+
+
+//filmes originais da netflix
+app.get("/discover", async (req, res) => {
+    try {
+        const {data} = await axios(`https://api.themoviedb.org/3/${API_BASE}/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}
+        `)
+        res.send(data)
+        return data.results
+        
+    } catch (error) {
+        res.send(error.message)
+    }
+    res.send()
+})
+
+
+
+
+
 
 
 app.listen(1234)

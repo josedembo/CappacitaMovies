@@ -1,23 +1,19 @@
-const  url_image = "https://image.tmdb.org/t/p/w400"
+// const click = document.querySelectorAll("a")
+const  url2_image = "https://image.tmdb.org/t/p/w400"
+// console.log(click)
+function alerta(id){
+    getMovei(id)
+    const box = document.querySelector(".box")
+    box.style.display = "block"
+    console.log(id)
 
-//bunca todos os filmes
-async function getMovies(){
-    
-    try {
-        const response = await fetch("http://localhost:1234/")
-        console.log(response.status)
-        const data = await response.json()
-
-        listMovies(data)
-        const id = document.querySelector("img").id
-        console.log("este é o id da imagem:",id)
-    } catch (error) {
-        
-        console.log(error.message)
-    }
 }
 
-// busca o filme pelo id
+function fechar(){
+    const box = document.querySelector(".box")
+    box.style.display = "none"
+}
+
 async function getMovei(id){
     try {
         const response = await axios.get(`http://localhost:1234/filme/${id}`)
@@ -30,8 +26,8 @@ async function getMovei(id){
         DescreveFilme(elemets, id)
 
     } catch (error) { 
-        console.log(error.message)
-        return error.message
+        console.log(error)
+        return error
     }
 }
 
@@ -50,40 +46,24 @@ function movieDadta(data){
         adulto: data.adult,
         genero: generos,
         tempo: data.runtime,
-        imagem:`${url_image}${data.poster_path}`,
+        imagem:`${url2_image}${data.poster_path}`,
         pontuacao: data.vote_average
-    }
-}
-
-// adicona nas opções todos os nomes dos filmes
-function listMovies(data){
-    
-    let listarFilmes = ""
-  
-
-    for(filme of data){
-       
-
-        listarFilmes += ` <option value="${filme.id}">${filme.title}</option>`
-
-        document.querySelector("#inputGroupSelect01").innerHTML = listarFilmes
-
     }
 }
 
 // atribuie a descrição do filme
 function DescreveFilme(elemets, id){
-    const img = document.querySelector("img")
-    img.setAttribute("src", `${url_image}${elemets.imagem}`)
-    img.setAttribute("id", id)
+    const img = document.querySelector("#lingua")
+    img.setAttribute("src", `${url2_image}${elemets.imagem}`)
+    // img.setAttribute("id", id)
     
     const nome = document.querySelector(".description").children[0];
     const ano = document.querySelector(".description").children[1];
     const  pontuacao= document.querySelector(".description").children[2];
     const generos = document.querySelector(".description").children[3];
     const descricao = document.querySelector(".description").children[4];
-    const movieName = document.querySelector(".filme")
-    const movieId = document.querySelector(".movieId")
+    // const movieName = document.querySelector(".filme")
+    // const movieId = document.querySelector(".movieId")
     
 
     const restricao = elemets.adulto ? "18+|" : ""
@@ -94,8 +74,7 @@ function DescreveFilme(elemets, id){
     pontuacao.innerHTML = elemets.pontuacao
     generos.innerHTML = `${restricao} ${Object.values(elemets.genero)} `
     descricao.innerHTML = `${elemets.descricao}`
-    movieName.innerHTML = `${elemets.name}`
-    movieId.innerHTML = `${elemets.id}`
+    // movieName.innerHTML = `${elemets.name}`
+    // movieId.innerHTML = `${elemets.id}`
 }
-getMovies()
-getMovei(451048)
+

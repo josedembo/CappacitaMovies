@@ -12,6 +12,7 @@
 </head>
 <body>
     <div  id="container">
+      <!-- cabeçalho -->
         <header>
             <div class="container">
                 <div class="name text-center">
@@ -32,6 +33,9 @@
                         <li class="nav-item">
                           <a class="nav-link " href="./filme.html">+Movies</a>
                         </li>
+                        <li class="nav-item">
+                          <a class="nav-link " href="./filme.html">comentarios</a>
+                        </li>
                       </ul>
                     </div>
                   </nav>
@@ -43,20 +47,46 @@
         </div>
         <section>
             <div class="container">
-                <div class="row"></div>
+                <!-- <div class="listar">
+                  
+                </div> -->
+                <div class="row"> </div>
             </div>
         </section>
-        <div class="container flooter">
-          <footer>
-             
-                  CappacitaFilmes
-              
-          </footer>
-
+      
+        <div class="box" style="display: none;" id="box">
+          <div class="btn1">
+            <button type="button" onclick="fechar()" class="btn btn-info">fechar</button>
+          </div>
+            <div class="elementos">
+              <figure>
+                <img src=""  class ="img-fluid img-thumbnail" id= "lingua" alt="">
+                <figcaption></figcaption>
+              </figure>
+              <figcaption></figcaption>
+              <div class="description">
+                      <h2></h2>
+                      <p></p>
+                      <p></p>
+                      <p></p>
+                      <p class="overviw"></p>
+              </div>
+          </div>
         </div>
+        
+        <footer>
+              CappacitaFilmes
+              
+        </footer>
+
+      </div>
     </div>
+  
 </body>
+<!-- axios -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.js" integrity="sha512-un2apco0rYUiZXxbURvZ7oBq4u0cGrXaIbC4C1k5nAio6WRMyYvj8xKua3NqALOuu0F83zDha7nKoFCZzx26rg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./src/index.js"></script>
+<script src="./src/enventos.js"></script>
 <!-- js bootstrap -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

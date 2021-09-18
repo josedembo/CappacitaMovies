@@ -1,7 +1,7 @@
 
 
 section .container{
-    background-color:white;
+    background-color:#000;
     color:blueviolet;
 }
 footer{
@@ -22,14 +22,99 @@ footer{
 main{
 position: absolute;
 }
-p, h1{
+/* p, h1{
     position: relative;
-}
+} */
 /* figure{
     width: 12.5rem;
 } */
 /* img{
     max-width: 200px;
     max-height: 200px;
+} */
+
+.listar{
+    display: flex;
+    padding: 2rem;
+
+}
+
+.box{
+    width: 70%;
+    height: 80%;
+    padding-top: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(49, 47, 71);
+    color: white;
+}
+.box{
+    position: fixed;
+    top: 100px;
+    bottom: 500px;
+    left:180px;
+
+}
+
+.box > figure > img{
+width: 150px;
+height: 100px;
+}
+
+.btn1{
+display: flex;
+justify-content: end;
+}
+
+.elementos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* descrição */
+.detalhes > .container{
+    position: fixed;
+    top: 30px;
+    bottom: 500px;
+    left: 128px;;
+}
+
+.elementos > figure{
+    /* position: relative; */
+    width: 17rem;
+}
+
+.description{
+    height: 100%;
+    margin-left: 2rem;
+    width: 24rem
+}
+
+.description{
+    text-align: start;
+}
+
+.overviw{
+    text-align: justify;
+}
+
+/* .detalhes > .container{
+    padding-top: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(49, 47, 71);
+    color: white;
+    width: 80%;
+    height: 80%;
+    
+}
+
+
+main{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 } */
 

@@ -35,7 +35,7 @@
                 </div>
               </nav>
         </div>
-    </header>
+      </header>
         
         <section class="main">
             <div class="container">
@@ -50,13 +50,14 @@
               </div>
         </section>
 
-        <section>
-            <div class="container">
-                <main>
-                  <figure>
+        <section class="detalhes">
+            <div class="container" style="display:block;">
+                <main >
+                  <figure class="imana">
                     <img src="" class ="img-fluid img-thumbnail" id= "" alt="">
                     <figcaption></figcaption>
                   </figure>
+                  <figcaption></figcaption>
                   <div class="description">
                           <h2></h2>
                           <p></p>
@@ -66,31 +67,37 @@
                   </div>
                 </main>
             </div>
-          </main>
         </section>
 
-        <section>
+        <section class="comentarios">
             <div class="container">
               <form action="http://localhost:1234/comentario" method="POST">
-                <div class="form-group">
-                  <label for="exampleFormControlInput1">Nome</label>
-                  <input type="text" class="form-control" name="name"id="exampleFormControlInput1" placeholder="nome">
-                </div>
-                <div class="form-group">
-                  <label for="exampleFormControlSelect1">Movie name</label>
-                  <select class="form-control" name="filme" id="exampleFormControlSelect1">
-                    <option class="filme"></option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Comentarios</label>
-                  <textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3"></textarea>
-                </div>
-                <div class="col-auto my-1">
-                  <button type="submit" class="btn btn-primary">Enviar</button>
-                </div>
-              </div>
+                  <fieldset>
+                    <legend>Digite seu comentário:</legend>
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Nome</label>
+                      <input type="text" class="form-control" name="name"id="exampleFormControlInput1" placeholder="nome">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlSelect1">Movie name</label>
+                      <select class="form-control" name="filme" id="exampleFormControlSelect1">
+                        <option class="filme"></option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label style="display:none"for="exampleFormControlSelect1">Movie Id</label>
+                      <select class="form-control" name="movieId" style="display: none;" id="exampleFormControlSelect1">
+                        <option class="movieId"></option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleFormControlTextarea1">Comentarios</label>
+                      <textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="col-auto my-1">
+                      <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                  </fieldset>
               </form>
             </div>
         </section>
@@ -100,8 +107,9 @@
                 CappacitaFilmes
             </div>
         </footer>
-    </div>
+   </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.js" integrity="sha512-un2apco0rYUiZXxbURvZ7oBq4u0cGrXaIbC4C1k5nAio6WRMyYvj8xKua3NqALOuu0F83zDha7nKoFCZzx26rg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./src/filme.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
