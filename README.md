@@ -78,8 +78,8 @@ $ npm run dev
 
 # O servidor estará rodando  na porta:3367
 ```
-### 🎲 Rodando o front End
- * para inicializar a página e com o back End já rodando acesse o terminar na raiz do projeto e roda o comando `npx lite-server` ou pode inicializar o arquivo [index.html](https://github.com/josedembo/CappacitaMovies/blob/main/index.html)  no vscode com o [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+### 🎲 Rodando o Front End
+ * para inicializar a página e com o Back End já rodando acesse o terminar na raiz do projeto e roda o comando `npx lite-server` ou pode inicializar o arquivo [index.html](https://github.com/josedembo/CappacitaMovies/blob/main/index.html)  no vscode com o [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 
 
