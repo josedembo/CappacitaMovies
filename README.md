@@ -13,11 +13,7 @@ Tabela de conteúdos
    * [Instalação](#instalacao)
    * [Como usar](#como-usar)
       * [Pre Requisitos](#pre-requisitos)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
       * [Combo](#combo)
-   * [Tests](#testes)
    * [Tecnologias](#tecnologias)
 <!--te-->
 
@@ -40,7 +36,19 @@ Após isso é recomendável a instalação de um editor de código(caso não ten
       * [mysql2](https://www.npmjs.com/package/mysql2)
       * [knex](https://knexjs.org/#Installation-node)
       * [body-parser](https://www.npmjs.com/package/body-parser)
-   * para ver a versões de cada pacote pode acesse o [package.json](https://github.com/josedembo/CappacitaMovies/blob/main/package.json) do projeto
+      * para ver a versões de cada pacote pode acesse o [package.json](https://github.com/josedembo/CappacitaMovies/blob/main/package.json) do projeto
+   * Banco de dados
+      * Após a instalção do mysql server e do workbanch(opcional), é necessário criar um banco de dados e uma tabela para guardar os comentários:
+      ```bash
+      # Cria o banco de dados
+      $ create database  dbfilme;
+
+      # crie a tabela com os respectivos colunas ou atributos
+      $ create table filmes(id int not null unique auto_increment, fl_id int not null, user_name varchar(100) not null,
+      fl_name varchar(100) not null, fl_coment varchar(1000) not null, fl_created_at datetime not null default current_timestamp, fl_updated_at datetime  default       null on update current_timestamp, primary key(id));
+      ```
+      * O código acima tamém está disponivel no arquivo [dbfilmes] ()
+      
 <!--te-->
 
 ### 🎲 Rodando o Back End (servidor)
@@ -66,10 +74,10 @@ $ npm run dev
 ### Autor
 ---
 
-<a href="https://blog.rocketseat.com.br/author/thiago/">
+<a href="https://github.com/josedembo">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/68882941?s=400&u=d518c6c61763405cd84f0d90e75f64845c37495c&v=4" width="100px;" alt=""/>
  <br />
- <sub><b>José Pedro Daniel Dembo</b></sub></a> <a href="https://blog.rocketseat.com.br/author/thiago//" title="Rocketseat">🚀</a>
+ <sub><b>José Pedro Daniel Dembo</b></sub></a> <a href="https://github.com/josedembo" title="josedembo">🚀</a>
 
 
 Primero gradnde projeto feito com muita dedicação e ❤️ por José pedro Daniel Dembo 👋🏽 Entre em contato!
