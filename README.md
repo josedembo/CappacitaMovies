@@ -9,12 +9,15 @@ Tabela de conteúdos
 =================
 <!--ts-->
    * [Sobre](#cappacitamovies)
-   * [Tabela de Conteudo](#tabela-de-conteudo)
+   * [Tabela de Conteudo](#tabela-de-conteúdos)
    * [Autenticações necessárias](#autenticações-necessárias)
-   * [Como Rodar o projeto](#como-usar)
+   * [Como Rodar o projeto](#como-rodar-o-projeto)
       * [Pre Requisitos](#pré-requisitos)
-      * [Combo](#combo)
+      * [dependecias](#dependecias)
+      * [Rodando o Back End (servidor)](#rodando-o-back-end)
+      * [Rodando o Front End](#rodando-o-front-end)
    * [Tecnologias](#tecnologias)
+   * [Autor](#autor)
 <!--te-->
 # Autenticações necessárias
   Os filmes ilustrados no site [cappacitavaMovies](https://github.com/josedembo/CappacitaMovies)  são obtidos apartir de chamadas a API do TMDB e para isso é necessário um chave(key) acesso, sendo assim é de estrema importância obter uma chave de acesso para consumir a API do TMDB, com isso é necessário acessar o site do [TMDB](https://www.themoviedb.org/?language=pt-BR) fazer o login e gerar uma chave de acesso, pode seguir o [tutorial](https://www.youtube.com/watch?v=mbImkkJFxBs) para a criação da chave de acesso. Após gerar a chave de acesso pode guarda-la para depois.
@@ -53,12 +56,12 @@ Após isso é recomendável a instalação de um editor de código(caso não ten
       $ create table filmes(id int not null unique auto_increment, fl_id int not null, user_name varchar(100) not null,
       fl_name varchar(100) not null, fl_coment varchar(1000) not null, fl_created_at datetime not null default current_timestamp, fl_updated_at datetime  default       null on update current_timestamp, primary key(id));
       ```
-      * O código acima também está disponivel no arquivo [dbfilmes] ()
+      * O código acima também está disponivel no arquivo [dbfilmes] (https://github.com/josedembo/CappacitaMovies/blob/main/db/dbfilme.sql)
       * caso já tenha o mysql server instaldo e o seu usário root tenha senha, essas própriedades podem ser alteradas após fazer o clone do projeto no arquivo [knexFile.js](https://github.com/josedembo/CappacitaMovies/blob/main/db/knexFile.js), na linha 7 o atributo `password : ''` pode ser alterado `password : '<senha do seu usuario root>'`, caso  não tenha criado uma senha para o usuario root , não será necessário alterar o arquivo
       
 <!--te-->
 
-### 🎲 Rodando o Back End (servidor)
+### Rodando o Back End
 
 ```bash
 # Clone este repositório
@@ -78,12 +81,17 @@ $ npm run dev
 
 # O servidor estará rodando  na porta:3367
 ```
-### 🎲 Rodando o Front End
+### Rodando o Front End
  * para inicializar a página e com o Back End já rodando acesse o terminar na raiz do projeto e roda o comando `npx lite-server` ou pode inicializar o arquivo [index.html](https://github.com/josedembo/CappacitaMovies/blob/main/index.html)  no vscode com o [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
+## Tecnologias
+As ferramentas abaixo foram usadas para a construção do projeto:
+
+- [x] [Node.js](https://nodejs.org/en/)
+- [x] [Mysql](https://www.mysql.com/)
 
 
-### Autor
+# Autor
 ---
 
 <a href="https://github.com/josedembo">
@@ -92,6 +100,6 @@ $ npm run dev
  <sub><b>José Pedro Daniel Dembo</b></sub></a> <a href="https://github.com/josedembo" title="josedembo">🚀</a>
 
 
-Primero gradnde projeto feito com muita dedicação e ❤️ por José pedro Daniel Dembo 👋🏽 Entre em contato!
+Primeiro grande projeto feito com muita dedicação e ❤️
  
 [![Linkedin Badge](https://img.shields.io/badge/-josedembo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/josedembo/)](https://www.linkedin.com/in/josedembo/) 
