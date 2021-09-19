@@ -26,6 +26,8 @@ Tabela de conteúdos
 
 Antes de começar a rodaro projeto, você vai precisar instalar em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e o [msql](https://dev.mysql.com/doc/refman/8.0/en/installing.html). 
+Também pode seguir o tutorial para a instalação no windows ou no lixux: [mysql-windows](https://www.youtube.com/watch?v=iYN9a3i2qkQ&t=117s) e [mysql-linux](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04-pt)
+
 Após isso é recomendável a instalação de um editor de código(caso não tenha), como o [VSCode](https://code.visualstudio.com/)
 
 ### dependecias
@@ -51,7 +53,7 @@ $ git clone <https://github.com/josedembo/CappacitaMovies.git>
 $ cd CappacitaMovies
 
 # Instale as dependências
-$ npm install <nome do pacote>
+$ npm install <nome-do-pacote>
 
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev
@@ -71,6 +73,5 @@ $ npm run dev
 
 
 Primero gradnde projeto feito com muita dedicação e ❤️ por José pedro Daniel Dembo 👋🏽 Entre em contato!
-
-[![Twitter Badge](https://img.shields.io/badge/-@tgmarinho-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/tgmarinho)](https://twitter.com/tgmarinho) [![Linkedin Badge](https://img.shields.io/badge/-Thiago-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/tgmarinho/) 
-[![Gmail Badge](https://img.shields.io/badge/-tgmarinho@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:tgmarinho@gmail.com)
+ 
+[![Linkedin Badge](https://img.shields.io/badge/-josedembo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/josedembo/)](https://www.linkedin.com/in/josedembo/) 
