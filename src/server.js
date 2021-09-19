@@ -6,7 +6,8 @@ const bodyParser = require('body-parser')
 const database = require("../db/databaseMysqlKnex")
 require("dotenv").config
 
-const API_KEY = process.env.API_KEY
+// const API_KEY = process.env.API_KEY
+const API_KEY = "b7eaea3eb00f546b229268e21f35982e"
 
 //body Parser
 app.use(bodyParser.urlencoded({extended:false}))
