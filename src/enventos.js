@@ -6,6 +6,7 @@ function alerta(id){
     const box = document.querySelector(".box")
     box.style.display = "block"
     console.log(id)
+    
 
 }
 
@@ -23,7 +24,8 @@ async function getMovei(id){
         console.log(movieDadta(data))
         const elemets = movieDadta(data)
 
-        DescreveFilme(elemets, id)
+        DescreveFilme(elemets)
+
 
     } catch (error) { 
         console.log(error)
@@ -41,7 +43,7 @@ function movieDadta(data){
     return {
         id:data.id,
         name : data.title,
-        year : data.release_date.slice(0, 4),
+        year : data.release_date,
         descricao: data.overview,
         adulto: data.adult,
         genero: generos,
@@ -51,30 +53,26 @@ function movieDadta(data){
     }
 }
 
-// atribuie a descrição do filme
-function DescreveFilme(elemets, id){
-    const img = document.querySelector("#lingua")
+// atribuie a descrição de cada  filme
+function DescreveFilme(elemets){
+    const img = document.querySelector("#img-detalhes")
     img.setAttribute("src", `${url2_image}${elemets.imagem}`)
-    // img.setAttribute("id", id)
     
     const nome = document.querySelector(".description").children[0];
     const ano = document.querySelector(".description").children[1];
     const  pontuacao= document.querySelector(".description").children[2];
     const generos = document.querySelector(".description").children[3];
     const descricao = document.querySelector(".description").children[4];
-    // const movieName = document.querySelector(".filme")
-    // const movieId = document.querySelector(".movieId")
-    
-
     const restricao = elemets.adulto ? "18+|" : ""
-    console.log(restricao)
+ 
     console.log("teste")
     nome.innerHTML = elemets.name
     ano.innerHTML = elemets.year
     pontuacao.innerHTML = elemets.pontuacao
-    generos.innerHTML = `${restricao} ${Object.values(elemets.genero)} `
+    generos.innerHTML = `${restricao} ${Object.values(elemets.genero)} | ${elemets.tempo} min `
     descricao.innerHTML = `${elemets.descricao}`
-    // movieName.innerHTML = `${elemets.name}`
-    // movieId.innerHTML = `${elemets.id}`
 }
+
+
+
 

@@ -6,8 +6,7 @@ const bodyParser = require('body-parser')
 const database = require("../db/databaseMysqlKnex")
 require("dotenv").config
 
-// const API_KEY = process.env.API_KEY
-const API_KEY = "b7eaea3eb00f546b229268e21f35982e"
+const API_KEY = process.env.API_KEY
 
 //body Parser
 app.use(bodyParser.urlencoded({extended:false}))
@@ -17,6 +16,7 @@ app.use(cors())
 
 const host = "api.themoviedb.org/3/movie"
 const typeReq = "upcoming"
+
 
 // busca filme na API do TMDB
 app.get("/", async (req, res) =>{
@@ -61,30 +61,11 @@ app.post("/comentario", async(req, res) =>{
     
 })
 
+
 // busca e mostra todos os comentários do banco de dados
 app.get("/comentarios", async (req, res) => {
-    res.send(await database.mostarFilmes())
+    res.send(await database.mostarComentarios())
 })
-
-
-//filmes originais da netflix
-app.get("/discover", async (req, res) => {
-    try {
-        const {data} = await axios(`https://api.themoviedb.org/3/${API_BASE}/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}
-        `)
-        res.send(data)
-        return data.results
-        
-    } catch (error) {
-        res.send(error.message)
-    }
-    res.send()
-})
-
-
-
-
-
 
 
 app.listen(1234)

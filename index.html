@@ -8,7 +8,7 @@
     <!-- css of bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-    <title>Filmes</title>
+    <title>FilmesCapacita</title>
 </head>
 <body>
     <div  id="container">
@@ -27,14 +27,11 @@
                         <li class="nav-item active">
                           <a class="nav-link" href="./index.html">Home</a>
                         </li>
-                        <!-- <li class="nav-item">
-                          <a class="nav-link" href="#"></a>
-                        </li> -->
                         <li class="nav-item">
-                          <a class="nav-link " href="./filme.html">+Movies</a>
+                          <a class="nav-link " href="#comentarios">comentar</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link " href="./filme.html">comentarios</a>
+                          <a class="nav-link " href="./comentarios.html"> ver comentarios</a>
                         </li>
                       </ul>
                     </div>
@@ -42,6 +39,7 @@
             </div>
         </header>
 
+        <!-- lista dos filmes -->
         <div class="container">
             <h2>Popular Movies</h2>
         </div>
@@ -50,17 +48,18 @@
                 <!-- <div class="listar">
                   
                 </div> -->
-                <div class="row"> </div>
+                <div class="row "> </div>
             </div>
         </section>
-      
+        
+        <!-- detalhes dos filmes -->
         <div class="box" style="display: none;" id="box">
           <div class="btn1">
             <button type="button" onclick="fechar()" class="btn btn-info">fechar</button>
           </div>
             <div class="elementos">
               <figure>
-                <img src=""  class ="img-fluid img-thumbnail" id= "lingua" alt="">
+                <img src=""  class ="img-fluid img-thumbnail" id= "img-detalhes" alt="">
                 <figcaption></figcaption>
               </figure>
               <figcaption></figcaption>
@@ -73,13 +72,45 @@
               </div>
           </div>
         </div>
-        
+
+        <!-- comentários -->
+        <section class="comentarios" id="comentarios">
+          <div class="container">
+            <form action="http://localhost:1234/comentario" method="POST">
+                <fieldset>
+                  <legend>Digite seu comentário:</legend>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Nome</label>
+                    <input type="text" class="form-control" name="name"id="exampleFormControlInput1" placeholder="nome">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlSelect1">filme</label>
+                    <select class="form-control filme" name="filme" id="exampleFormControlSelect1" placeholder="Selecione">
+                      <!-- aqui entra as lista dos nomes dos  filmes -->
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label style="display:none"for="exampleFormControlSelect1">Movie Id</label>
+                    <select class="form-control" name="movieId" style="display: none;" id="exampleFormControlSelect1">
+                      <option  class="movieId"></option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Comentarios</label>
+                    <textarea class="form-control" name="comentario" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <div class="col-auto my-1">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                  </div>
+                </fieldset>
+            </form>
+          </div>
+      </section>
+        <!-- rodapé -->
         <footer>
               CappacitaFilmes
               
         </footer>
-
-      </div>
     </div>
   
 </body>

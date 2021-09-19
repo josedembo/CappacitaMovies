@@ -5,6 +5,7 @@ async function cadastrarFilmes(form){
     //knex('books').insert({title: 'Slaughterhouse Five'})
     try {
         if(form.user_name == "" || form.fl_name == "" || form.fl_coment =="" ){
+            
             return "priencha os campos vazios"
         }else{
 
@@ -17,7 +18,8 @@ async function cadastrarFilmes(form){
 
 }
 
-async function mostarFilmes(){
+// busca todos os comentários no banco de dados
+async function mostarComentarios(){
 
     // knex.select().table('books')
     try {
@@ -29,4 +31,4 @@ async function mostarFilmes(){
 
 }
 
-module.exports = {cadastrarFilmes, mostarFilmes}
+module.exports = {cadastrarFilmes, mostarComentarios}
