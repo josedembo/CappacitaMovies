@@ -17,7 +17,7 @@ function fechar(){
 
 async function getMovei(id){
     try {
-        const response = await axios.get(`http://localhost:1234/filme/${id}`)
+        const response = await axios.get(`http://localhost:3367/filme/${id}`)
         
         console.log(response.data)
         const data = response.data

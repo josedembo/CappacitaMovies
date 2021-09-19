@@ -3,7 +3,7 @@ const  url_image = "https://image.tmdb.org/t/p/w300"
 async function getMovies(){
     
     try {
-        const {data} = await axios.get("http://localhost:1234/")
+        const {data} = await axios.get("http://localhost:3367/")
         // console.log(response.status)
         // const data = await response.json()
 

@@ -1,6 +1,6 @@
 async function getComentarios(){
     try {
-        const {data} = await axios.get("http://localhost:1234/comentarios")
+        const {data} = await axios.get("http://localhost:3367/comentarios")
         // var parseDataLong = Date.parse (data.fl_created_at);
         // console.log(parseDataLong);
         // var dataISODataHora = new Date("2021-09-19T05:16:40.000Z");
