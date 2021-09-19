@@ -8,11 +8,11 @@
 Tabela de conteúdos
 =================
 <!--ts-->
-   * [Sobre](#Sobre)
+   * [Sobre](#cappacitamovies)
    * [Tabela de Conteudo](#tabela-de-conteudo)
-   * [Autenticações necessárias](#instalacao)
+   * [Autenticações necessárias](#autenticações-necessárias)
    * [Como Rodar o projeto](#como-usar)
-      * [Pre Requisitos](#pre-requisitos)
+      * [Pre Requisitos](#pré-requisitos)
       * [Combo](#combo)
    * [Tecnologias](#tecnologias)
 <!--te-->
