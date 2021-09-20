@@ -6,8 +6,7 @@ const bodyParser = require('body-parser')
 const database = require("../db/databaseMysqlKnex")
 require("dotenv").config
 
-// const API_KEY = process.env.API_KEY
-const API_KEY = "b7eaea3eb00f546b229268e21f35982e"
+const API_KEY = process.env.API_KEY
 
 
 //body Parser
@@ -20,38 +19,32 @@ const host = "api.themoviedb.org/3/movie"
 const typeReq = "upcoming"
 
 
-// busca filme na API do TMDB
+// busca filmes na API do TMDB
 app.get("/", async (req, res) =>{
 
-    try {
-        const {data} = await axios(`https://${host}/${typeReq}?api_key=${API_KEY}&language=pt-BR
+        const response = await axios(`https://${host}/${typeReq}?api_key=${API_KEY}&language=pt-BR
         `)
-        res.send(data.results)
-        return data.results
-        
-    } catch (error) {
-        res.send(error.message)
-    }
-    // return data.results
+          const  {data} = response
+
+          if(response.status == 200){
+            res.status(200).send(data.results)
+          }
+          
+
 })
  
 
 // busca um filme  pelo id na API do TMDB
 app.get("/filme/:id", async (req, res) =>{
-    try {
+    
         const {data} = await axios(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${API_KEY}&language=pt-BR
         `)
         res.send(data)
-        return data.results
-        
-    } catch (error) {
-        res.send(error.message)
-    }
    
 })
 
 
-// recebe os comentarios digitaos pelo usuario e cadastra no banco de dados
+// recebe os comentarios digitados pelo usuario e cadastra no banco de dados
 app.post("/comentario", async(req, res) =>{
     const dataForm = {
         fl_id:req.body.movieId,
@@ -59,6 +52,7 @@ app.post("/comentario", async(req, res) =>{
         fl_name:req.body.filme,
         fl_coment:req.body.comentario
     }
+
     res.send( await database.cadastrarFilmes(dataForm))
     
 })

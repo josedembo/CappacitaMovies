@@ -42,16 +42,16 @@ main{
 }
 .box{
     position: fixed;
-    top: 100px;
-    bottom: 500px;
-    left:180px;
+    top: 4rem;
+    bottom: 50rem;
+    left:10rem;
     
 }
 
 
 .box > figure > img{
-    width: 150px;
-    height: 100px;
+    width: 15rem;
+    height: 10rem;
 }
 
 .btn1{

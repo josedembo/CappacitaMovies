@@ -1,15 +1,14 @@
-// const click = document.querySelectorAll("a")
 const  url2_image = "https://image.tmdb.org/t/p/w400"
-// console.log(click)
-function alerta(id){
+
+//abre a tela de detalhes
+function abrir(id){
     getMovei(id)
     const box = document.querySelector(".box")
     box.style.display = "block"
-    console.log(id)
-    
 
 }
 
+// fecha a tela de detalhes
 function fechar(){
     const box = document.querySelector(".box")
     box.style.display = "none"
@@ -19,17 +18,15 @@ async function getMovei(id){
     try {
         const response = await axios.get(`http://localhost:3367/filme/${id}`)
         
-        console.log(response.data)
         const data = response.data
-        console.log(movieDadta(data))
         const elemets = movieDadta(data)
 
         DescreveFilme(elemets)
 
 
     } catch (error) { 
-        console.log(error)
-        return error
+
+        return error.message
     }
 }
 

@@ -2,3 +2,25 @@
     margin: 0;
     padding: 0;
 }
+
+footer{
+    background-color:black;
+    height: 3rem;
+    color: white ;
+}
+
+footer > .container{
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+.comentarios{
+    width: 100vw;
+    height: 100vh;
+}

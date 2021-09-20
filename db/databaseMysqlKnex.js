@@ -1,8 +1,8 @@
 const {databaseConnection} = require("./connection")
 
+// cadastra um novo comentário no banco de dados
 async function cadastrarFilmes(form){
 
-    //knex('books').insert({title: 'Slaughterhouse Five'})
     try {
         if(form.user_name == "" || form.fl_name == "" || form.fl_coment =="" ){
             
@@ -10,7 +10,7 @@ async function cadastrarFilmes(form){
         }else{
 
             const result = await databaseConnection("filmes").insert(form)
-            return "cometário cadastrado"
+            return "comentário cadastrado"
         }
     } catch (error) {
         console.log(error.message,"\nDeu erro na inserção")

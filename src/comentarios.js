@@ -1,12 +1,7 @@
+// pegas os comentários do banco de dados e mostra para o usuário
 async function getComentarios(){
     try {
         const {data} = await axios.get("http://localhost:3367/comentarios")
-        // var parseDataLong = Date.parse (data.fl_created_at);
-        // console.log(parseDataLong);
-        // var dataISODataHora = new Date("2021-09-19T05:16:40.000Z");
-        // console.log(dataISODataHora);
-        // console.log(data.fl_created_at)
-        console.log(data)
         
         const comentar = document.querySelector("tbody")
         
@@ -21,19 +16,20 @@ async function getComentarios(){
         }
         
     } catch (error) {
-        console.log(error)
+        return error.message
     }
 }
 
-
+// formata a hora e a data dos comentários
 function formataData(dados){
+
     const meses = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul","Ago","Set","Out","Nov","Dez"];
     var data = new Date(dados.fl_created_at);
-    console.log(data); 
+  
     let dataFormatada = ((data.getDate() + " " + meses[(data.getMonth())] + " " + data.getFullYear()));
 
     let horaFormatada = ((data.getHours() + ":" + data.getMinutes()+ ":" + data.getSeconds()));
-    console.log(dataFormatada); 
+ 
     return `${dataFormatada} - ${horaFormatada}`
             
 }
