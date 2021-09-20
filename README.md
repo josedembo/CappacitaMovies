@@ -85,10 +85,11 @@ $ npm run dev
  * para inicializar a página e com o Back End já rodando acesse o terminar na raiz do projeto e roda o comando `npx lite-server` ou pode inicializar o arquivo [index.html](https://github.com/josedembo/CappacitaMovies/blob/main/index.html)  no vscode com o [live server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
 ## Tecnologias
-As ferramentas abaixo foram usadas para a construção do projeto:
+As ferramentas abaixo foram usadas para a construção do projeto: 
 
 - [x] [Node.js](https://nodejs.org/en/)
 - [x] [Mysql](https://www.mysql.com/)
+- [x] [bootstrap](https://getbootstrap.com/)
 
 
 # Autor
